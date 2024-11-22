@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://byg44r21n4fiw"
+path="res://.godot/imported/snowFort.obj-5cf5a1bc2dff0297a25f47cde3a3114a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/snowFort.obj-5cf5a1bc2dff0297a25f47cde3a3114a.mesh"]
+
+source_file="res://assets/christmas/Models/OBJ format/snowFort.obj"
+dest_files=["res://.godot/imported/snowFort.obj-5cf5a1bc2dff0297a25f47cde3a3114a.mesh", "res://.godot/imported/snowFort.obj-5cf5a1bc2dff0297a25f47cde3a3114a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

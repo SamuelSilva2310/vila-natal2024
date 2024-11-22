@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cemt6b0tcmif6"
+path="res://.godot/imported/lightsMulti.obj-d98c76891408779c07b3593a92c62009.mesh"
+
+[deps]
+
+files=["res://.godot/imported/lightsMulti.obj-d98c76891408779c07b3593a92c62009.mesh"]
+
+source_file="res://assets/christmas/Models/OBJ format/lightsMulti.obj"
+dest_files=["res://.godot/imported/lightsMulti.obj-d98c76891408779c07b3593a92c62009.mesh", "res://.godot/imported/lightsMulti.obj-d98c76891408779c07b3593a92c62009.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

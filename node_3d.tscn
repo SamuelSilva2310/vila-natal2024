@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://cl7gjh42mwnx6"]
+
+[ext_resource type="Script" path="res://old/manager.gd" id="1_mwf4i"]
+[ext_resource type="PackedScene" uid="uid://dvqi0egq8nn1v" path="res://present.tscn" id="1_yxk8l"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_kg1bi"]
+size = Vector3(5, 0.5, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hr47q"]
+size = Vector3(5, 0.5, 5)
+
+[node name="Node3D" type="Node3D" node_paths=PackedStringArray("camera")]
+script = ExtResource("1_mwf4i")
+spawn_offset_y = 8.0
+camera = NodePath("Camera3D")
+
+[node name="DirectionalLight3D3" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.715229, 0.69889, 0, -0.69889, 0.715229, 0, 6.13157, 3.08606)
+shadow_enabled = true
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.995603, 0.0654677, -0.0669983, 0.061363, 0.996213, 0.0615933, 0.070777, 0.0572113, -0.99585, 0.104937, 0.596671, -4.62222)
+shadow_enabled = true
+
+[node name="Present2" parent="." instance=ExtResource("1_yxk8l")]
+transform = Transform3D(1, 0, 0, 0, 0.876836, -0.48079, 0, 0.48079, 0.876836, 0, 3.66642, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 1.65312e-08, -8.58455e-08, -1.08132e-08, 0.95103, 0.3091, 8.67515e-08, 0.3091, -0.95103, -0.00102997, 3.62877, -5.99126)
+
+[node name="Floor" type="StaticBody3D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+mesh = SubResource("BoxMesh_kg1bi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("BoxShape3D_hr47q")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.926075, 0.37734, 0, -0.37734, 0.926075, 0, 2.76349, 2.14365)
+shadow_enabled = true
+
+[node name="Present" parent="." instance=ExtResource("1_yxk8l")]
+transform = Transform3D(1, 0, 0, 0, 0.847845, -0.530245, 0, 0.530245, 0.847845, 0, 1.83321, 0)

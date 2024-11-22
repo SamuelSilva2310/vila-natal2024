@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dh4ph2jt0n8m7"
+path="res://.godot/imported/presentGreen.obj-dda39b87e04787d96953d01ddb035e9c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/presentGreen.obj-dda39b87e04787d96953d01ddb035e9c.mesh"]
+
+source_file="res://assets/christmas/Models/OBJ format/presentGreen.obj"
+dest_files=["res://.godot/imported/presentGreen.obj-dda39b87e04787d96953d01ddb035e9c.mesh", "res://.godot/imported/presentGreen.obj-dda39b87e04787d96953d01ddb035e9c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

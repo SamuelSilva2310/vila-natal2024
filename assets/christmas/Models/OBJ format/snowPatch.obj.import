@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://hv1hum8ib56p"
+path="res://.godot/imported/snowPatch.obj-a77ab1e7824cef30601dc4ff95ec1859.mesh"
+
+[deps]
+
+files=["res://.godot/imported/snowPatch.obj-a77ab1e7824cef30601dc4ff95ec1859.mesh"]
+
+source_file="res://assets/christmas/Models/OBJ format/snowPatch.obj"
+dest_files=["res://.godot/imported/snowPatch.obj-a77ab1e7824cef30601dc4ff95ec1859.mesh", "res://.godot/imported/snowPatch.obj-a77ab1e7824cef30601dc4ff95ec1859.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

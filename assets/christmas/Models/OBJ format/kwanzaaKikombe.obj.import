@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://et8dju6okejx"
+path="res://.godot/imported/kwanzaaKikombe.obj-904527562976751041e4980b5f9b3244.mesh"
+
+[deps]
+
+files=["res://.godot/imported/kwanzaaKikombe.obj-904527562976751041e4980b5f9b3244.mesh"]
+
+source_file="res://assets/christmas/Models/OBJ format/kwanzaaKikombe.obj"
+dest_files=["res://.godot/imported/kwanzaaKikombe.obj-904527562976751041e4980b5f9b3244.mesh", "res://.godot/imported/kwanzaaKikombe.obj-904527562976751041e4980b5f9b3244.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

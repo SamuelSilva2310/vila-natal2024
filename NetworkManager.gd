@@ -2,7 +2,7 @@ extends Node
 
 signal present_fetched(data)
 
-@export var endpoint: String = "https://jsonplaceholder.typicode.com/todos/1"
+@export var endpoint: String = "http://127.0.0.1:8080/fetch"
 @export var polling_interval: float = 5.0
 
 var timer: Timer
@@ -47,6 +47,7 @@ func fetch_present():
         print("[INFO] HTTP request initiated successfully.")
 
 # Handle the HTTP request completion
+# Handle the HTTP request completion
 func _http_request_completed(result: int, response_code: int, headers: Array, body: PackedByteArray):
     print("[INFO] HTTP Request completed. Response Code: ", response_code)
 
@@ -56,16 +57,12 @@ func _http_request_completed(result: int, response_code: int, headers: Array, bo
         http_request.queue_free()
     
     if response_code == 200:
-        # Parse the response body
-        var body_string = body.get_string_from_utf8()
-        var json = JSON.new()
-        var parse_result = json.parse(body_string)
-        if parse_result == OK:
-            var data = json.get_data()
-            emit_signal("present_fetched", data)
-            #print("[INFO] Data fetched and parsed successfully: ", data)
+        var image = Image.new()
+        var error = image.load_png_from_buffer(body)
+        if error == OK:
+            print("[INFO] Image fetched successfully. Emitting signal.")
+            emit_signal("present_fetched", image)
         else:
-            print("[ERROR] Failed to parse JSON. Error: ", parse_result)
-            print("[DEBUG] Response Body: ", body_string)
+            print("[ERROR] Failed to parse the fetched image. Error: ", error)
     else:
         print("[WARNING] HTTP request returned an unexpected response code: ", response_code)

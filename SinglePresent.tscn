@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bg6plgmkp026y"]
+[gd_scene load_steps=9 format=3 uid="uid://bg6plgmkp026y"]
 
 [ext_resource type="Script" path="res://MainScene.gd" id="1_7rvy7"]
 [ext_resource type="Script" path="res://PresentManager.gd" id="2_71wn3"]
 [ext_resource type="Script" path="res://NetworkManager.gd" id="2_sid7b"]
 [ext_resource type="PackedScene" uid="uid://dvqi0egq8nn1v" path="res://present.tscn" id="3_oqf0q"]
 [ext_resource type="Script" path="res://addons/camera.gd" id="5_6uglh"]
+[ext_resource type="PackedScene" uid="uid://ci6gkqkamffmj" path="res://assets/christmas/Models/GLTF format/hanukkahMenorah.glb" id="6_wau1o"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ipr63"]
 size = Vector3(5, 0.5, 5)
@@ -24,12 +25,19 @@ present_scene = ExtResource("3_oqf0q")
 floor = NodePath("../Floor/MeshInstance3D")
 push_force = 5.0
 
+[node name="CanvasLayer" type="CanvasLayer" parent="PresentManager"]
+
+[node name="TextureRect" type="TextureRect" parent="PresentManager/CanvasLayer"]
+offset_right = 319.0
+offset_bottom = 319.0
+
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-1, 1.65312e-08, -8.58456e-08, -1.08132e-08, 0.95103, 0.3091, 8.67515e-08, 0.3091, -0.95103, -0.00102997, 2.6707, -10.8338)
+transform = Transform3D(1, 0, 0, 0, 0.997374, 0.0724201, 0, -0.0724201, 0.997374, 0, 1.02305, 2.99515)
 script = ExtResource("5_6uglh")
+sensitivity = 0.1
 
 [node name="Floor" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 1.04901e-08, 0, 1.04901e-08, 1, 0, -4.76837e-07, -4.76837e-07)
+transform = Transform3D(0.70541, 0, 0, 0, 1, 7.84811e-09, 0, 1.04901e-08, 0.748144, 0, -4.76837e-07, -4.76837e-07)
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
@@ -45,3 +53,6 @@ shadow_enabled = true
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.995603, 0.0654677, -0.0669983, 0.061363, 0.996213, 0.0615933, 0.070777, 0.0572113, -0.99585, 0.104937, 0.596671, -4.62222)
 shadow_enabled = true
+
+[node name="hanukkahMenorah2" parent="." instance=ExtResource("6_wau1o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.13996, 0.25, -0.483161)

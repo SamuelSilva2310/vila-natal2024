@@ -16,14 +16,29 @@ func remove_present():
 		current_present.queue_free()
 		current_present = null
 
+func show_image(image: Image):
+
+	var canvas: CanvasLayer = $CanvasLayer
+	var texture = ImageTexture.create_from_image(image)
+	var texture_rect: TextureRect = canvas.get_child(0)
+	
+	texture_rect.expand_mode = TextureRect.EXPAND_FIT_WIDTH
+	texture_rect.texture = texture
+
+	canvas.add_child(texture_rect)
+
+
 # Spawn a new present with the given dynamic height
-func spawn_present(data = null):
+func spawn_present(image = null):
+
+	show_image(image)
+
 	if current_present:
-		remove_present()  # Remove any existing present before spawning a new one
+		remove_present()
 
 	# Instance the new present scene
 	current_present = present_scene.instantiate() as RigidBody3D
-	current_present.add_image_to_mesh()
+	current_present.add_image_to_present(image)
 	get_tree().root.add_child(current_present)
 
 	# Position the present with a dynamic spawn height
@@ -33,10 +48,6 @@ func spawn_present(data = null):
 	# Apply a gentle push to the present
 	var push_direction = calculate_push_direction(position)
 	apply_push(current_present, push_direction)
-
-	# Optionally configure present with external data
-	if data:
-		current_present.set_meta("data", data)
 
 
 # Handle updates from fetched data (removes the old present, if any, and spawns a new one)

@@ -6,26 +6,20 @@ extends Node3D
 
 
 func _ready():
-    
-    network_manager.connect("present_fetched", present_manager.update_present)
+	
+	network_manager.connect("present_fetched", present_manager.update_present)
 
-    if poll_presents:
-        network_manager.start_fetching()
+	if poll_presents:
+		network_manager.start_fetching()
 
 func _process(_delta):
-    # Allow manual present spawning for testing
-    if Input.is_action_just_pressed("ui_accept"):
+	
+	if Input.is_key_pressed(KEY_K):
+		var image: Image = Image.new()
+		var image_path = "res://image.png"
+		var error = image.load(image_path)
+		# Check for errors
+		if error == OK:
+			print("Image loaded successfully!")
 
-        var image: Image = Image.new()
-        var image_path = "res://image.png"  # Set your image path here
-        var error = image.load(image_path)
-        # Check for errors
-        if error == OK:
-            print("Image loaded successfully!")
-
-        present_manager.spawn_present(image)       
-            
-           
-           
-
-    
+		present_manager.spawn_present(image)       

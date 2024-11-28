@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://dviv6d3ywxsje"]
+
+[ext_resource type="Script" path="res://Notification.gd" id="1_521re"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qbjex"]
+bg_color = Color(0.731081, 0.885977, 0.797848, 0.898039)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_blend = true
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+shadow_size = 2
+
+[sub_resource type="LabelSettings" id="LabelSettings_eg625"]
+font_size = 12
+
+[node name="Notification" type="CanvasLayer"]
+script = ExtResource("1_521re")
+
+[node name="NotificationPanel" type="Panel" parent="."]
+offset_left = 1030.0
+offset_top = 4.0
+offset_right = 1148.0
+offset_bottom = 28.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qbjex")
+
+[node name="NotificationText" type="Label" parent="NotificationPanel"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 1.0
+offset_right = 119.0
+offset_bottom = 24.0
+text = "SDASDASD"
+label_settings = SubResource("LabelSettings_eg625")
+vertical_alignment = 1
+autowrap_mode = 3

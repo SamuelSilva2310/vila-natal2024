@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cvscwrrd4146d"
+path="res://.godot/imported/cabinDoor.obj-7002f2b5b3abcb04a3b5aaf48b6a95be.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cabinDoor.obj-7002f2b5b3abcb04a3b5aaf48b6a95be.mesh"]
+
+source_file="res://assets/christmas/Models/OBJ format/cabinDoor.obj"
+dest_files=["res://.godot/imported/cabinDoor.obj-7002f2b5b3abcb04a3b5aaf48b6a95be.mesh", "res://.godot/imported/cabinDoor.obj-7002f2b5b3abcb04a3b5aaf48b6a95be.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

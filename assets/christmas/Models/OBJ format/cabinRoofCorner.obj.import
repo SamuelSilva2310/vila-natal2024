@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://7ko04uyls0c"
+path="res://.godot/imported/cabinRoofCorner.obj-3b998d326a7dc4682ca21fb6f388a7ba.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cabinRoofCorner.obj-3b998d326a7dc4682ca21fb6f388a7ba.mesh"]
+
+source_file="res://assets/christmas/Models/OBJ format/cabinRoofCorner.obj"
+dest_files=["res://.godot/imported/cabinRoofCorner.obj-3b998d326a7dc4682ca21fb6f388a7ba.mesh", "res://.godot/imported/cabinRoofCorner.obj-3b998d326a7dc4682ca21fb6f388a7ba.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

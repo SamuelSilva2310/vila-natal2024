@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dq0gb4mfsox0v"
+path="res://.godot/imported/cabinSide.obj-2ce101e87de669653a7d4c2e3e77e7ca.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cabinSide.obj-2ce101e87de669653a7d4c2e3e77e7ca.mesh"]
+
+source_file="res://assets/christmas/Models/OBJ format/cabinSide.obj"
+dest_files=["res://.godot/imported/cabinSide.obj-2ce101e87de669653a7d4c2e3e77e7ca.mesh", "res://.godot/imported/cabinSide.obj-2ce101e87de669653a7d4c2e3e77e7ca.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

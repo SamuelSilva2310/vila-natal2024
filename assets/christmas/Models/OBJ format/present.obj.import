@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d2cht3b2b00vp"
+path="res://.godot/imported/present.obj-e6b7db8f8df6cad34a83dc35f19d49ed.mesh"
+
+[deps]
+
+files=["res://.godot/imported/present.obj-e6b7db8f8df6cad34a83dc35f19d49ed.mesh"]
+
+source_file="res://assets/christmas/Models/OBJ format/present.obj"
+dest_files=["res://.godot/imported/present.obj-e6b7db8f8df6cad34a83dc35f19d49ed.mesh", "res://.godot/imported/present.obj-e6b7db8f8df6cad34a83dc35f19d49ed.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d3b2cpjt7a75a"
+path="res://.godot/imported/treePineSnowRound.obj-5e1fa5f7d4649b8139a45f4301f4fa26.mesh"
+
+[deps]
+
+files=["res://.godot/imported/treePineSnowRound.obj-5e1fa5f7d4649b8139a45f4301f4fa26.mesh"]
+
+source_file="res://assets/christmas/Models/OBJ format/treePineSnowRound.obj"
+dest_files=["res://.godot/imported/treePineSnowRound.obj-5e1fa5f7d4649b8139a45f4301f4fa26.mesh", "res://.godot/imported/treePineSnowRound.obj-5e1fa5f7d4649b8139a45f4301f4fa26.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

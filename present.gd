@@ -122,4 +122,4 @@ func set_properties(float_position, hover_amplitude, hover_speed, floating_durat
     self.hover_amplitude = hover_amplitude
     self.hover_speed = hover_speed
     self.floating_duration = floating_duration
-    self.drop_duration = floating_duration
+    self.drop_duration = drop_duration

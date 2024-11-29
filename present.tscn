@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dvqi0egq8nn1v"]
+[gd_scene load_steps=15 format=3 uid="uid://dvqi0egq8nn1v"]
 
 [ext_resource type="Script" path="res://present.gd" id="1_i6hsj"]
 [ext_resource type="PackedScene" uid="uid://dx5qo1mox22yf" path="res://assets/christmas/Models/GLTF format/present.glb" id="2_fmlrh"]
 [ext_resource type="Texture2D" uid="uid://d1cfcsjve1dnn" path="res://image.png" id="3_yqlrf"]
+[ext_resource type="Texture2D" uid="uid://cjgvpmx72yw23" path="res://assets/kenney_particle-pack/PNG (Transparent)/star_04.png" id="4_unngb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2tr2k"]
 margin = 0.0
@@ -16,9 +17,47 @@ albedo_texture = ExtResource("3_yqlrf")
 material = SubResource("StandardMaterial3D_04per")
 size = Vector2(0.25, 0.25)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dhnu2"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("4_unngb")
+disable_receive_shadows = true
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_gk672"]
+offsets = PackedFloat32Array(0.00835655, 0.501393, 1)
+colors = PackedColorArray(0.793297, 0.395293, 0.067521, 1, 0.797787, 0.636567, 0.153937, 1, 0.786561, 0.735657, 0.557913, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qi6ji"]
+gradient = SubResource("Gradient_gk672")
+
+[sub_resource type="Curve" id="Curve_ry6hj"]
+_data = [Vector2(0.0167866, 0.854616), 0.0, 0.0, 0, 0, Vector2(0.280576, 0.981497), 0.0, 0.0, 0, 0, Vector2(0.544365, 0.978853), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_m0are"]
+curve = SubResource("Curve_ry6hj")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uvlhn"]
+emission_shape = 1
+emission_sphere_radius = 0.08
+angle_min = -20.0
+angle_max = 20.0
+angular_velocity_max = 2.0
+gravity = Vector3(2.08165e-12, 0.5, 2.08165e-12)
+scale_curve = SubResource("CurveTexture_m0are")
+color_ramp = SubResource("GradientTexture1D_qi6ji")
+
+[sub_resource type="QuadMesh" id="QuadMesh_dnq28"]
+size = Vector2(0.5, 0.5)
+
 [node name="Present" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.426101, 0)
 script = ExtResource("1_i6hsj")
-image_texture = null
 
 [node name="present2" parent="." instance=ExtResource("2_fmlrh")]
 
@@ -27,5 +66,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000200164, 0.164148, 0.0057
 shape = SubResource("BoxShape3D_2tr2k")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.41325, 0, 0, 0, 1.24067, 0, 0, 0, 1, 0, 0.132256, 0.172369)
+transform = Transform3D(0.95, 0, 0, 0, 0.95, 0, 0, 0, 0.95, 0, 0.132256, 0.172369)
 mesh = SubResource("QuadMesh_aotyc")
+
+[node name="Particles" type="Node" parent="."]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+material_override = SubResource("StandardMaterial3D_dhnu2")
+gi_mode = 0
+amount = 6
+lifetime = 2.0
+visibility_aabb = AABB(-4, -3.771, -4, 8, 8, 8)
+process_material = SubResource("ParticleProcessMaterial_uvlhn")
+draw_pass_1 = SubResource("QuadMesh_dnq28")

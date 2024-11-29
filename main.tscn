@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bg6plgmkp026y"]
+[gd_scene load_steps=10 format=3 uid="uid://bg6plgmkp026y"]
 
 [ext_resource type="Script" path="res://MainScene.gd" id="1_7rvy7"]
 [ext_resource type="Script" path="res://PresentManager.gd" id="2_71wn3"]
@@ -6,6 +6,9 @@
 [ext_resource type="Script" path="res://NetworkManager.gd" id="2_sid7b"]
 [ext_resource type="PackedScene" uid="uid://dviv6d3ywxsje" path="res://Notification.tscn" id="3_pud5v"]
 [ext_resource type="Script" path="res://addons/camera.gd" id="5_6uglh"]
+
+[sub_resource type="Environment" id="Environment_eqpnr"]
+background_color = Color(0.122252, 0.122252, 0.122252, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ipr63"]
 size = Vector3(5, 0.5, 5)
@@ -24,6 +27,7 @@ script = ExtResource("2_m6d5n")
 [node name="NetworkManager" type="Node" parent="."]
 script = ExtResource("2_sid7b")
 endpoint = "http://127.0.0.1:8080/api/image/fetch"
+polling_interval = 2.0
 
 [node name="PresentManager" type="Node" parent="."]
 script = ExtResource("2_71wn3")
@@ -32,7 +36,6 @@ spawn_height = 2.0
 hover_amplitude = 0.1
 hover_speed = 1.5
 floating_duration = 8.0
-drop_duration = 1.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="PresentManager"]
 
@@ -42,11 +45,14 @@ offset_right = 159.0
 offset_bottom = 139.0
 
 [node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.999338, -0.0363821, 0, 0.0363821, 0.999338, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+environment = SubResource("Environment_eqpnr")
 script = ExtResource("5_6uglh")
 sensitivity = 0.1
 
 [node name="Floor" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, -1.04901e-08, 0, 1.04901e-08, 1, 0, -1.12429, -4.76837e-07)
+visible = false
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
@@ -54,11 +60,16 @@ mesh = SubResource("BoxMesh_ipr63")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
 shape = SubResource("BoxShape3D_lkvh6")
+disabled = true
 
 [node name="DirectionalLight3D3" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.715229, 0.69889, 0, -0.69889, 0.715229, 0, 6.13157, 3.08606)
 shadow_enabled = true
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.995603, 0.0654677, -0.0669983, 0.061363, 0.996213, 0.0615933, 0.070777, 0.0572113, -0.99585, 0.104937, 0.596671, -4.62222)
+transform = Transform3D(-0.995587, 0.0658659, -0.0668406, 0.0617106, 0.996139, 0.062437, 0.0706951, 0.0580367, -0.995808, 0.104937, 0.596671, -4.62222)
+shadow_enabled = true
+
+[node name="DirectionalLight3D4" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.995603, 0.0654677, -0.0669983, 0.0744408, 0.118787, -0.990125, -0.0568628, -0.990759, -0.123138, 0.104937, -3.95879, -0.754668)
 shadow_enabled = true
